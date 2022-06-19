@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/templates/fichefrais/_form.html.twig</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/templates/fichefrais/index.html.twig</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/src/Entity/Utilisateur.php</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/src/Form/EtatType.php</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/src/Security/LoginFormAuthenticator.php</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/templates/registration/register.html.twig</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/src/Form/RegistrationFormType.php</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/src/Form/FichefraisType.php</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/src/Form/DomaineType.php</file>
+            <file>file:/C:/wamp64/www/sfGSB1.0/sf/templates/security/login.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

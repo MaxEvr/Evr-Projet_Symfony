@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+{% block titre %}GSB - Présentation du SI{% endblock %}
+
+{% block body %}
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Voici la présentation du <span>Système Informatique</span></h1>
+          <h2>Pour en savoir plus, cliquez en dessous !</h2>
+
+          <div class="btns">
+            <a href="{{ path('equipement') }}" class="btn-menu animated fadeInUp scrollto">Équipement</a>
+            <a href="{{ path('gestion') }}" class="btn-book animated fadeInUp scrollto">Gestion</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+              <img src="{{ asset('img/aboutPres.jpg') }}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3 style='color:#cda45e;'>Le système informatique</h3><br/>
+            <p class="fst-italic">
+                Sur le site parizien, toutes les fonctions administratives <span style='color:#cda45e;'>(gestion des ressourse humène,
+                    comptabilité, direction, commerciale, etc.)</span> sont présentes. On trouve en outre un service laborecherche, le service juridique et le service communication.<br/><br/>
+            La salle serveur occupe le 6ème étage du bâtiment et les accès y sont restreints (étage accessible par
+            ascenseur à l'aide d'une clé sécurisée, portes d'accès par éskalier munies d'un lecteur de badge, sas
+            d'entrée avec gardien présent 24h/24).
+            </p>            
+            <p>
+            Les serveurs assurent les fonctions de base du réseau <span style='color:#cda45e;'>(DHCP, DNS, Annuaire et gestion centralisée
+            des environnements)</span> et les fonctions de communication <span style='color:#cda45e;'>(Intranet, Messagerie, Agenda partagé, etc.)</span>.
+            On trouve aussi de nombreuses applications métier <span style='color:#cda45e;'>(base d'information pharmaceutique, serveurs
+            dédiés à la recherche, base de données des produits du laboratoire, base de données des licences
+            d'exploitation pharmaceutique, etc.)</span> et les fonctions plus génériques de toute entreprise (Progiciel de
+            Gestion Intégré avec ses modules RH, GRC, etc.).</p>
+            <ul>
+              <li style="color:#cda45e;"><i class="bi bi-check-circle"></i> Un nombre croissant de serveurs est virtualisé.</li>
+              <li style="color:#cda45e;"><i class="bi bi-check-circle"></i> Constitué autour de VLAN, le réseau segmente les services de manière à fluidifier le trafic.</li>              
+            </ul>
+          </div>
+        </div>
+          <div class='row'>
+            <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <p>
+            Les données de l'entreprises sont considérées comme stratégiques et ne peuvent tolérer ni fuite, ni
+            destruction. L'ensemble des informations est répliqué quotidiennement aux Etats-Unis par un lien
+            dédié. Toutes les fonctions de redondances <span style='color:#cda45e;'>(RAID, alimentation, lien réseau redondant, Spanningtree, clustering, etc.)</span> 
+            sont mises en œuvre pour assurer une tolérance aux pannes maximale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    
+    
+
+  </main><!-- End #main -->
+{% endblock %}

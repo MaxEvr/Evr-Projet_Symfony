@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}Modifier un Frais forfait{% endblock %}
+
+{% block body %}
+    <section id="hero" class="d-flex align-items-center">    
+      <div class="container" data-aos="fade-up">
+          <center>
+          <div class="section-title">              
+          <h2>Modifier le Frais Forfait</h2>
+        </div>    
+
+    {{ include('fraisforfait/_form.html.twig', {'button_label': 'Modifier'}) }}
+    <br/>
+    <a href="{{ path('fraisforfait_index') }}" class="btn-menu animated fadeInUp scrollto">Revenir voir la liste</a>
+
+    {{ include('fraisforfait/_delete_form.html.twig') }}
+          </center>
+      </div>
+    </section>
+{% endblock %}

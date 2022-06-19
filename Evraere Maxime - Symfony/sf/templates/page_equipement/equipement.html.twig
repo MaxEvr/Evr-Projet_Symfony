@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block titre %}GSB - Équipements{% endblock %}
+{% block body %}
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Voici les <span>Équipements</span></h1>
+          <h2>Si vous voulez en savoir davantage sur GSB, cliquez ci-dessous !</h2>
+
+          <div class="btns">
+            <a href="{{path('presentationSI') }}" class="btn-menu animated fadeInUp scrollto">Présentation du SI</a>
+            <a href="{{path('gestion') }}" class="btn-book animated fadeInUp scrollto">La Gestion</a>
+          </div>
+        </div>
+      
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+              <img src="{{ asset('img/aboutEqui.jpg') }}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3 style='color:#cda45e;'>Nos équipements informatique</h3><br/>
+            <p class="fst-italic">
+            L'informatique est fortement répandue sur le site. Chaque employé est équipé d'un poste fixe relié au
+            système central. On dénombre ainsi plus de 350 équipements terminaux et un nombre de serveurs
+            physiques conséquent (45 en 2012) sur lesquels tournent plus de 100 serveurs virtuels.
+            </p>
+            <p>On trouve aussi :</p>
+            <ul>
+               <li><i class="bi bi-check-circle"></i> des stations de travail plus puissantes dans la partie <span style='color:#cda45e;'>labo-recherche.</span></li>
+               <li><i class="bi bi-check-circle"></i> une multitude d'ordinateurs portables <span style='color:#cda45e;'>(personnels de direction, service informatique, services commerciaux, etc)</span></li>
+            </ul>
+            <p>
+            Les visiteurs médicaux reçoivent une indemnité bisannuelle pour s'équiper en informatique (politique Swiss-Bourdin) ou une dotation en équipement (politique Galaxy). 
+            Il n'y a pas à l'heure actuelle d'uniformisation des machines ni du mode de fonctionnement. <br/><br/>
+            Chaque employé de l'entreprise a une adresse de messagerie de la forme <a tabIndex="-1" href="mailto:snomUtilisateur@swissgalaxy.com" style="color:#cda45e"><b>snomUtilisateur@swissgalaxy.com</b></a>. Les anciennes adresses de chaque lcda45eaboratoire ont été définitivement fermées au 1er
+            janvier 2011
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    </main><!-- End #main --> 
+
+{% endblock %}

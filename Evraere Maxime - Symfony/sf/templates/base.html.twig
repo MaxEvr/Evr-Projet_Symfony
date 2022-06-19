@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block titre %}GSB - Accueil{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ asset('img/favicon.png')}}" rel="icon">
+  <link href="{{ asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Restaurantly - v3.1.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->                                                                                                                                                                                                                                                                           
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="{{ path('index') }}">Galaxy Swiss Bourdin</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="{{ path('index') }}" class="logo me-auto me-lg-0"><img src="{{ asset('img/logo.png')}}" alt="" class="img-fluid"></a>
+
+      {% if app.user is empty %}
+          
+      {% else %}
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{{path('index') }}">Accueil</a></li>          
+          <li class="dropdown"><a href="#"><span>Le SI</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{path('presentationSI') }}">Présentation du SI</a></li>
+              <li><a href="{{path('gestion') }}">Gestion</a></li>
+              <li><a href="{{path('equipement') }}">Équipement</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Le Réseau</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>              
+              <li><a href="{{path('repartition') }}">Répartition du réseau</a></li>
+              <li><a href="{{path('segmentation') }}">Segmentation du réseau</a></li>              
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Utilisateurs</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>              
+              <li><a href="{{path('liste_utilisateurs') }}">Les utilisateurs</a></li>
+              <li><a href="{{path('listeCarducien') }}">Liste des Cadurciens</a></li>
+              <li><a href="{{path('listeAyantFrais') }}">Ayant des frais</a></li>
+              <li><a href="{{path('listeNAyantPasFrais') }}">N'ayant pas de frais</a></li>
+              <li><a href="{{path('listeNbFrais') }}">Nombre de frais</a></li>
+              <li><a href="{{path('utiliConcerne') }}">Utilisateurs concernés</a></li>
+            </ul>          
+          </li>
+          <li><a class="nav-link scrollto" href="{{path('liste_domaine') }}">Domaines</a></li>
+          
+           <li class="dropdown"><a href="#"><span>Les États</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>              
+              <li><a href="{{path('etat_index') }}">Liste des états</a></li>
+              <li><a href="{{path('etat_new') }}">Créer un état</a></li>              
+            </ul>          
+          </li>
+          <li class="dropdown"><a href="#"><span>Les Frais</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>              
+              <li><a href="{{path('fraisforfait_index') }}">Liste des frais</a></li>
+              <li><a href="{{path('fraisforfait_new') }}">Créer un frais</a></li>              
+            </ul>          
+          </li>
+          <li class="dropdown"><a href="#"><span>Les Fiches Frais</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>              
+              <li><a href="{{path('fichefrais_index') }}">Liste des fiches frais</a></li>
+              <li><a href="{{path('fichefrais_new') }}">Créer une fiche frais</a></li>              
+            </ul>          
+          </li>
+          
+          {% if app.user is empty %}
+             <a href="{{path('app_login') }}">Connexion</a>
+          {% else %}
+            {% if is_granted('ROLE_ADMIN') %}            
+                <a class="container_elem" href="{{path('app_logout')}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="iconify iconify--mdi" width="32" height="32" viewbox="0 0 24 24"><path d="M16 17v-3H9v-4h7V7l5 5-5 5M14 2a2 2 0 012 2v2h-2V4H5v16h9v-2h2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2h9z" fill="#f5f5f5"/></svg>
+                </a>
+            {% else %}
+                <a href="{{path('app_logout') }}" title="Se déconnecter">{{ app.user.email }}</a>
+                {% endif %}
+          {% endif %}
+        </ul>
+           
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- navbar -->
+      {% endif %}
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Body de la page ======= -->
+  {% block body %}{% endblock %}
+  
+  
+  
+  
+  
+ <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Galaxy Swiss Bourdin</h3>
+              <p>
+                5 Av. Champ de Mars <br>
+                Paris 75007, France<br><br>
+                <strong>Tél. :</strong> 06 41 78 95 41<br>
+                <strong>mail :</strong> contact@gsb.fr<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>                
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Autres pages</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ path('index') }}">Accueil</a></li>
+              <li class="dropdown"><a href="#"><span>Le SI</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>              
+              <li><a href="{{path('presentation') }}">Présentation SI</a></li>
+              <li><a href="{{path('gestion') }}">Gestion</a></li>
+              <li><a href="{{path('equipement') }}">Équipement</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Réseau</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>              
+              <li><a href="{{ path('repartition') }}">Répartition</a></li>
+              <li><a href="{{ path('segmentation') }}">Segmentation</a></li>             
+            </ul>
+          </li> 
+              
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <li class="dropdown"><a href="#"><span>Divers</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>              
+              <li><a href="{{path('liste_utilisateurs') }}">Les utilisateurs</a></li>
+              <li><a href="{{path('listeCarducien') }}">Liste des Cadurciens</a></li>
+              <li><a href="{{path('listeAyantFrais') }}">Ayant des frais</a></li>
+              <li><a href="{{path('listeNAyantPasFrais') }}">N'ayant pas de frais</a></li>
+              <li><a href="{{path('listeNbFrais') }}">Nombre de frais</a></li>
+              <li><a href="{{path('utiliConcerne') }}">Utilisateurs concernés</a></li>
+            </ul>          
+          </li>
+              <!--
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>-->
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Notre Newsletter</h4>
+            <p>Si vous voulez des renseignements en temps réel, vous pouvez vous abonner à notre Newsletter !</p>
+            
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Entrer une adresse mail"><input type="submit" value="Abonnez-vous">
+            </form>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Galaxy Swiss Bourdin</span></strong>. Tout droits réservés !
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+        Création par <a href="https://bootstrapmade.com/">Evraere Maxime</a>
+      </div>
+    </div>
+  </footer><!-- End Footer --> 
+  
+  
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ asset('js/main.js') }}"></script>
+
+</body>
+
+</html>

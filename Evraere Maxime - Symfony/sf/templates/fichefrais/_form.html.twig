@@ -1,0 +1,38 @@
+{{ form_start(form) }}
+    <div class="col-sm-4">
+        <p><b>{{ form_label(form.mois) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.mois) }}</div>
+        {{ form_widget(form.mois) }}
+
+    </div>
+    <div class="col-sm-4">
+        <br/><p><b>{{ form_label(form.nbjustificatifs) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.nbjustificatifs) }}</div>    
+        {{ form_widget(form.nbjustificatifs) }}
+    </div>
+    <div class="col-sm-4">
+        <br/><p><b>{{ form_label(form.montantvalide) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.montantvalide) }}</div>    
+        {{ form_widget(form.montantvalide) }}
+    </div>
+    <div class="col-sm-4">
+        <br/><p><b>{{ form_label(form.datemodif) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.datemodif) }}</div>    
+        {{ form_widget(form.datemodif) }}
+    </div>
+    <div class="col-sm-4">
+        <br/><p><b>{{ form_label(form.idetat) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.idetat) }}</div>    
+        {{ form_widget(form.idetat) }}
+    </div>
+    <div class="col-sm-4">
+        <br/><p><b>{{ form_label(form.idutilisateur) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.idutilisateur) }}</div>    
+        {{ form_widget(form.idutilisateur) }}
+    </div>
+    
+    <div class="btns">
+        <button class="btn-menu animated fadeInUp scrollto" style="background-color: transparent;">{{ button_label|default('Créer une fiche frais') }}</button>            
+    </div>
+   
+{{ form_end(form) }}

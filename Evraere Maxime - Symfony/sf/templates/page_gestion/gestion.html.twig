@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block titre %}GSB - Gestion {% endblock %}
+{% block body %}
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Voici la <span>Gestion</span></h1>
+          <h2>Si vous voulez en savoir davantage sur GSB, cliquez ci-dessous !</h2>
+
+          <div class="btns">
+            <a href="{{path('presentationSI') }}" class="btn-menu animated fadeInUp scrollto">Présentation du SI</a>
+            <a href="{{path('equipement') }}" class="btn-book animated fadeInUp scrollto">Les Équipements</a>
+          </div>
+        </div>
+       
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+              <img src="{{ asset('img/aboutGestion.jpg') }}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3 style='color:#cda45e;'>La Gestion informatique</h3><br/>
+            <p class="fst-italic">
+                La DSI <span style='color:#cda45e;'>(Direction des Services Informatiques)</span> est une entité importante de la structure Europe qui
+            participe aux choix stratégiques.<br/><br/>
+            Pour Swiss-Bourdin, qui occupait le siège parisien avant la fusion, l'outil informatique et l'utilisation
+            d'outils décisionnels pour améliorer la vision et la planification de l'activité ont toujours fait partie de la
+            politique maison, en particulier pour ce qui concerne la partie recherche, production, communication et
+            juridique.
+
+            </p>    
+            <ul>
+                <li style="color:#cda45e;"><i class="bi bi-check-circle"></i> <b>La partie commerciale</b> a été le parent pauvre de cette informatisation, les visiteurs étant vus
+comme des acteurs distants autonomes. La DSI a convaincu l'entreprise que l'intégration des
+données fournies par cette partie aura un impact important sur l'ensemble de l'activité.</li>
+                            
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    
+
+  </main><!-- End #main -->
+
+
+{% endblock %}

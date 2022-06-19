@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+{% block titre %}GSB - Répartition{% endblock %}
+
+{% block body %}
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Voici la <span>Répartition du réseau</span></h1>
+          <h2>Pour en savoir plus, cliquez en dessous !</h2>
+
+          <div class="btns">
+            <a href="{{path('repartition') }}" class="btn-menu animated fadeInUp scrollto">Répartition</a>
+            <a href="{{path('segmentation') }}" class="btn-book animated fadeInUp scrollto">Ségmentation</a>
+          </div>
+        </div>       
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+              <img src="{{ asset('img/aboutRep.png') }}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3 style='color:#cda45e;'>Répartition du réseau</h3><br/>
+            <p class="fst-italic">
+            Chaque étage dispose d'une baie de brassage qui le relie par une fibre à la
+            baie centrale de la salle serveurs.<br/><br/>
+            Toutes les salles de réunion sont
+            équipées d'un point d'accès Wifi
+            positionné par défaut dans le VLAN
+            <span style='color:#cda45e;'>"Visiteurs"</span> qui autorise uniquement un
+            accès Internet.<br/><br/>
+            Les portables connectés en wifi à ce
+            point d'accès reçoivent ainsi une
+            adresse IP et n'ont, par conséquent
+            accès qu'aux <span style='color:#cda45e;'>services DHCP et DNS</span>.<br/><br/>
+            <span style='color:#cda45e;'>Le point d’accès</span> peut être configuré à
+            la demande pour être raccordé à un
+            VLAN présent au niveau de l'étage.<br/><br/>
+            Chaque salle de réunion dispose d'un
+            vidéoprojecteur, d'enceintes et d'un
+            tableau numérique interactif.<br/><br/>
+            La salle <span style='color:#cda45e;'>"Démonstration"</span> est destinée à
+            l'accueil des organismes de santé
+            <span style='color:#cda45e;'>(AFSSAPS notamment)</span> et des partenaires scientifiques. <br/>Elle dispose
+            de paillasses et d'équipements de laboratoire, en plus d'une salle de réunion.
+            </p>            
+            
+          </div>
+        </div>          
+      </div>
+    </section><!-- End About Section -->
+
+    
+
+  </main><!-- End #main -->   
+    
+{% endblock %}

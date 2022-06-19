@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block titre %}GSB - Les utilisateurs{% endblock %}
+
+{% block body %}
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Voici la liste de <span>tous les utilisateurs</span></h1>
+          <h2>Pour revenir aux pages d'avant, cliquez en dessous !</h2>
+
+          <div class="btns">
+            <a href="{{path('index') }}" class="btn-menu animated fadeInUp scrollto">Accueil</a>
+            <a href="{{path('presentationSI') }}" class="btn-book animated fadeInUp scrollto">Présentation</a>
+          </div>
+        </div>     
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          
+            {% if listeUtili is empty %}
+       <br>
+       <h3 style="text-align: center; color: #959595;">Aucun utilisateur</h3>
+    {% else %}
+        <h3 style="text-align: center; color: white;">Liste des utilisateurs, il y a : {{ listeUtili | length }} utilisateurs</h3><br/>
+    <table class="table" style='color: white;'>
+        <thead>
+          <tr>            
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Code Postal</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Date d'Embauche</th>
+            <th scope="col">Catégorie</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+            {% for liste in listeUtili %} 
+          <tr>              
+            <td>{{ liste.nom }}</td>
+            <td>{{ liste.prenom }}</td>
+            <td>{{ liste.adresse }}</td>
+            <td>{{ liste.cp }}</td>
+            <td>{{ liste.ville }}</td>
+            <td>{{ liste.dateEmbauche|date('d/m/Y') }}</td>
+            <td>{{ liste.laCategorie.libelle }}</td>
+          </tr>
+          {% endfor %}
+          
+    {% endif %}
+        </tbody>
+</table>    
+            
+            
+        </div>          
+      </div>
+    </section><!-- End About Section -->  
+
+  </main><!-- End #main -->
+    
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}Créer une Fiche frais{% endblock %}
+
+{% block body %}
+     <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">    
+      <div class="container" data-aos="fade-up">
+          <center>
+          <div class="section-title">              
+          <h2>Créer une Fiche Frais</h2>
+        </div>
+  
+
+    {{ include('fichefrais/_form.html.twig') }}
+<br/>
+    <a href="{{ path('fichefrais_index') }}" class="btn-menu animated fadeInUp scrollto">Revenir voir la liste</a>
+    
+    
+          </center>
+      </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('fichefrais_delete', {'id': fichefrai.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette fiche frais ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ fichefrai.id) }}">
+    <br/>
+    <button class="btn-menu animated fadeInUp scrollto" style="background-color: red;">Supprimer</button>
+</form>

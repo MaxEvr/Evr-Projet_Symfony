@@ -1,0 +1,6 @@
+<form method="post" action="{{ path('etat_delete', {'id': etat.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet état ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ etat.id) }}">
+    <br/>
+    <button class="btn-menu animated fadeInUp scrollto" style="background-color: red;">Supprimer</button>            
+   
+</form>

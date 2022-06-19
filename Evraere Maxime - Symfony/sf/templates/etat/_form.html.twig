@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    <div class="col-sm-4">
+        <p><b>{{ form_label(form.id) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.id) }}</div>
+        {{ form_widget(form.id) }}
+
+    </div>
+    <div class="col-sm-4">
+        <br/><p><b>{{ form_label(form.libelle) }}<span style="color: red;" > *</span></b></p>
+        <div style="color:red;">{{ form_errors(form.libelle) }}</div>    
+        {{ form_widget(form.libelle) }}
+    </div>
+
+    <div class="btns">
+            <button class="btn-menu animated fadeInUp scrollto" style="background-color: transparent;">{{ button_label|default('Créer l\'état') }}</button>            
+          </div>
+   
+{{ form_end(form) }}
